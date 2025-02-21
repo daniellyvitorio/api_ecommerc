@@ -1,9 +1,11 @@
 package com.ecommerce.api.entities;
 
+import com.ecommerce.api.dto.CategoryDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data //getters and setters and constructor
@@ -26,5 +28,14 @@ public class Product {
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private Set<Category> categories = new HashSet<>();
+
+    public void setCategories(List<CategoryDTO> categories) {
+        this.categories.clear();
+        for (CategoryDTO categoryDTO : categories) {
+            Category category = new Category();
+            category.setName(categoryDTO.getName());
+            this.categories.add(category);
+        }
+    }
 
 }

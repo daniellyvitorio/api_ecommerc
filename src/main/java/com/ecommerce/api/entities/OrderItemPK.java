@@ -6,7 +6,7 @@ import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Data
-@Embeddable //embutido no order_item
+@Embeddable //embutido no order_item// É A FK
 public class OrderItemPK {
     @ManyToOne
     @JoinColumn(name = "order_id")

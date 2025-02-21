@@ -17,9 +17,16 @@ public class ProductDTO {
     private String description;
     @NotNull(message = "Preço é obrigatório")
     @Positive(message = "Preço deve ser positivo")
-    private String price;
+    private double price;
     @NotNull(message = "Imagem é obrigatorio")
     private String imgUrl;
     @NotEmpty(message = "É obrigatorio selecionar pelo menos uma categoria")
     private List<CategoryDTO> categorias = new ArrayList<>();
+
+    public ProductDTO(String name, String description, Double price, String imgUrl) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.imgUrl = imgUrl;
+    }
 }

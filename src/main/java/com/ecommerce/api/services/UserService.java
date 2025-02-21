@@ -1,33 +1,34 @@
 package com.ecommerce.api.services;
 
-import com.ecommerce.api.dto.OrderDTO;
-import com.ecommerce.api.repositories.OrderRepository;
+import com.ecommerce.api.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class OrderService {
+public class UserService {
     @Autowired
-    private OrderRepository orderRepository;
+    private UserService userService;
 
-    public OrderDTO update(Long id, OrderDTO dto) {
+
+    public UserDTO findById(Long id) {
         return null;
     }
 
-    public OrderDTO create(OrderDTO dto) {
+    public List<UserDTO> findAll() {
         return null;
     }
 
-    public OrderDTO findById(Long id) {
+    public UserDTO create(UserDTO dto) {
         return null;
     }
 
-    public List<OrderDTO> findAll() {
+    public UserDTO update(Long id, UserDTO dto) {
         return null;
     }
 
     public void delete(Long id) {
+
     }
 }
